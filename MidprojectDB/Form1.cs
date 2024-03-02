@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MidprojectDB.usercontrols;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace MidprojectDB
@@ -15,6 +17,22 @@ namespace MidprojectDB
         public Form1()
         {
             InitializeComponent();
+           
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            setusercontrol(new Home_Control());
+        }
+        public void setusercontrol(UserControl control)
+        {
+            panelholder.Controls.Clear();
+            panelholder.Controls.Add(control);
+        }
+
+        private void Student_Click(object sender, EventArgs e)
+        {
+            setusercontrol(new StudentControl());
         }
     }
 }
